@@ -1,0 +1,64 @@
+//----------------------
+//Patron de colores
+//----------------------
+
+$texto: red;
+$principal: blue;
+$secundario: orange;
+
+//-------------------------------------
+//        Estilos de prueba
+ //------------------------------------
+//.container{
+//  border: 1px solid red;
+//}
+//
+//.row{
+//  border: 1px solid blue;
+//}
+//
+//.row>*{//Hijas directas
+//  border: 1px solid green;
+//}
+
+.servicios2{
+  border: 2px solid green;
+  height: 150px;
+  align-items: center;
+}
+
+.servicios2>*{//Hijos directos
+  border: 1px solid red;
+}
+
+.servicios{
+  border: 2px solid green;
+}
+
+.servicios>*{//Hijos directos
+  border: 1px solid red;
+}
+
+//-------------------------------------
+//        Estilos REM
+//------------------------------------
+//html{
+//  font-size: 20px;
+//}
+//
+//p{
+//  font-size: 1rem;
+//}
+//
+//h1{
+//  font-size: 2rem;
+//  border: 1rem solid red;
+//;
+//}
+
+//.servicios{
+//  display: flex;
+//}
+
+
+

@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- ARCHIVOS CSS BOOTSTRAP 4 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- ARCHIVOS CSS PERSONALIZADO -->
+    <link rel="stylesheet" href="css/estilos.css" type="text/css">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+
+<!-- NOTAS IMPORTANTES -->
+
+<!-- CONTENEDORES -->
+<!-- Contenedor normal .CONTAINER : Este no ocupa todo el ancho de la pantalla -->
+<!-- Contenedor fluido .CONTAINER-FLUID: Este SI ocupa todo el ancho de la pantalla -->
+<!-- Las filas tienen que ser hijos directos de un contenedor -->
+<!-- Las columnas tienen que ser hijas directas de una fila -->
+<!-- NO PODEMOS CREAR CONTENIDO DENTRO DE LAS FILAS, a diferencia del contenedor que si se peude para ingresar un titulo por ejemplo -->
+<!-- EL CONTENIDO SE CREA DENTRO DE LAS COLUMNAS -->
+<!-- PODEMOS TENER COMO MAXIMO 12 COLUMNAS EN UNA SOLA FILA -->
+<!-- COL-(NUMERO): Hace referencia a los espacios de los 12 disponibles que quiero ocupar -->
+<!-- SI SE EXCEDE EL LIMITE MAXIMO DE COLUMNAS las que sobren, crearan una nueva fila -->
+<!-- SI solo ponemos el atributo col sin numero alguno, este se encargara de distribuir los espcios automaticamente con proporciones identicas -->
+
+<!-- CONTEXTOS -->
+<!-- Los contextos se heredan de menor a mayor -->
+<!-- 16px = 1 REM, esta adherido a la etiqueta HTML que por defecto tiene 16px = 1REM <html> osea que si cambiamos el tamaño de fuente de esta etiqueta, todas las cosas que tengan REM cambiaran tambien-->
+<!-- Padding, margin, font-size entre otros, si tienen REM se adaptan al font-size de la etiqueta HTML -->
+<!-- Para hacer un diseño, tenemos que partir de unos colores, por lo general es del logotipo de la empresa -->
+<!-- REM: unidad de medida relativa -->
+<!-- Margin: Espaciado externo -->
+<!-- PAdding: Espaciado interno -->
+<!-- FLEXBOX: para usar flexbox deberemos tener un padre flexible -> flex-container -->
+<!-- Atajos: .nombreclase + tab, .nombre_clase*(numero) = me crea la cantidad de divs que le digo -->
+<!-- Block: es una etiqueta que ocupa todo el espacio disponible -->
+<!-- Por defecto flexbox tiene la propiedad flex.direction: row; -->
+
+<!-- DISPLAY -->
+<!-- LA propiedad display define el tipo de caja de un elemento html -->
+<!-- Display: none; hace que un elemento desaparezca de la pantalla -->
+<!-- Display: block -> Los elementos en bloque siempre van a ocupar todo el espacio disponible y van a crear una nueva linea -->
+<!-- Display: inline -> los elementos inline NO comimienzan en una nueva linea y su caja solo ocupa el espacio necesario para mostrar su contenido -->
+<!-- Display: inline-block; -> DAdo que la propiedad inline NO permite width ni heigth, esta esa propiedad
+que si lo permite -->
+<!-- Display: flex -> Identico a los elementos block ocupan todo el espacio disponible, no perminten
+ elementos uno al lado de otro , se le peude asignar una altura y una anchura pero con la unica
+ diferenciade que este crea un entorno flexible, es decir, que lso elementos dentro son manipulables
+ ordenar, alinear-->
+<!-- Display: inline-flex -> Igual a los elementos inline, con la diferencia de que es flexbox,
+ osea que a diferencia de block, solo ocupara el espacio de sus hijos osea el contenido,
+  al igual que la propiedad inline NO se peude definir width ni height, ES EL MENOS USADO-->
+<!-- Las clases display son responsive en bootstrap -->
+<!-- En diferentes contextos podemos cambiar el comportamiento de los displays -->
+<!-- Recordar que FLEXBOX usa unica y exclusivamente A SUS HIJOS DIRECTOS no nietos, ni bisnietos , etc.-->
+
+<!-- COMPONENTES -->
+<!-- Los componentes son piezas de codigo que permiten a gregar funcionalidades al sitio web -->
+
+<!-- BOTONES -->
+<!-- Los botones semanticos (por defecto) de bootstrap transimten algo al usuario
+ primary-> Color primario de la pagina web , debe personalizarse-> cuando queramos resaltar que el usuario tenga mas intensidad por presionar el boton
+ secondary->color secundario de la pagina web, debe personalizarse -> este es en caso de que el usuario no quiera presionar el primaruio, almenios que presione este
+ succes-> Cuando algo exitoso deberia ocurrir , creacion de informacion o accion positiva
+ info-> que actualizara o modificara informacion, revision de cambios
+ warning-> PRecaucion, para reportar fallo, banear usuario, restaurar usuario, o alertas, bloquear usuario
+ danger-> Peligro, acciones peligrosas si presionas aca, cosas permanentes, no hay punto de retorceso
+ Extras
+ btn-light->para que sobresalga en fondos oscuros
+ btn-dark-> para que sobresalga en fondos claros
+ btn-link-> si no queremos implementarle algun tipo de fondo, solo el enlace
+ -->
+<!-- Aquellos elementos que se comporten como un boton, por ejemplo un enlace, es altamente
+ recomendable usar el atributo role="button" -->
+
+<!-- NAVBAR -->
+<!-- NAVBAR; Los navbar SIEMPRE se inicia con la clase navbar -->
+<!-- Deberemos definir si vamos a usar un navbar claro o osucro (navbar-dark - navbar-light) dependiendo del diseño, ya que
+ bootstrap lo que hace es asignar el color de letra dependiendo de esto-->
+<!-- definit el fondo de la barra con bg -->
+<!-- El logotipo siempre va dentro de la etiqueta navbar-brand -->
+<!-- Si queremos cambiar el tamaño de letra del logotipo, deberemos asignar una etiqueta <span class="h1"></span> -->
+<!-- Debemos SI O SI meter el width de la imagen del logotipo para evitar problemas con los formatos -->
+<!-- class="navbar-toggler" -> Es el boton de las 3 rayitas para moviles -->
+<!-- class="active o disbled" para mantener activo un enlace o desactivado -->
+<!-- class="navbar-expand (va en la primera etqieuta que abarca el nav)" esto hace que en todos los contextos
+ NO se muestre colapsado, un ejemplo es cuando reducimos la ppantalla de la pagina oficila de bootstrap
+ la cual NO colapsa sus menus si no que lso mantiene uno al lado de otro-->
+<!-- class="navbar-expand-(contexto)", esto hara que a partir de cierto contexto SE MUESTRE UNICAMENTE
+ el menu expandido en formato de collapse, mostrandolos de manera normal-->
+<!-- PARA alinear enlaces expandidos, tenemos que usar margenes automaticos -->
+<!-- Los margenes automaticos dentro de flexbox absorben todos los margenes disponibles y se le aplica
+ al lado donde vamos a aplicar el margen, en resumen, empujo las cajas desde el lado que le indico-->
+<!-- margin left auto y margin right auto, hara que se distribuya el espacio disponible para cada
+ una de las propiedades-->
+
+<!-- Con display tambien se peude agrandar la letra -->
+
+<!-- NAVBAR: insertando boton movil -->
+<nav class="navbar navbar-dark bg-secondary navbar-expand-sm">
+    <!-- Este es el que activa el boton de vista movil -->
+    <!-- Collapse es el elemento disparador -->
+    <!-- poner # para referirnos a los id -->
+    <!-- Aria-controls permite a los lectores de pantalla saltar directamente al contenido manipulado -->
+    <!-- Aria-label es lo que le dira el lector de pantalals al usuario cuando tenga el foco con TAB -->
+    <!-- class="navbar-toggler" es el boton de las 3 rayitas -->
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu-principal"
+            aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menu de navegacion">
+        <span class="navbar-toggler-icon"></span><!-- Esto es lo que me crea las 3 barritas para moviles -->
+    </button>
+    <div class="container">
+        <a class="navbar-brand">Hola</a>
+
+
+        <!-- Esta es la victima, a quien tiene que 'matar' el disparador -->
+        <!-- navbar-collpse debe ir para que el contenido NO se muestre al lado del boton de 3 rayitas -->
+        <div class="collapse navbar-collapse" id="menu-principal">
+            <ul class="navbar-nav">
+                <!-- esta clase, hace que los hijos NO SE VEAN EN FORMA DE LISTE DESORDENADA es decir sin los punticos -->
+                <li class="nav-item"><!-- Los li tienen que tener esta clase -->
+                    <a href="#" class="nav-link">Inicio</a><!-- Los a tienen que tener tambien esta clase,  -->
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Nosotros</a>
+                </li>
+                <li class="nav-item ">
+                    <a href="#" class="nav-link">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<hr>
+
+<!-- NAVBAR, es un flexbox -->
+<!-- Si no quiero que lso elementos toquen los extremos de la pantalla ocmo la barra de nav
+ de la pg oficial de bootstrap, simplemente lo meto dentro de un contenedor-->
+<nav class="navbar navbar-dark bg-secondary">
+    <div class="container">
+        <a class="navbar-brand">Hola</a>
+    </div>
+</nav>
+
+<hr>
+
+<!-- Componentes -->
+<!-- Collapse -->
+<!-- Las filas ya tienen la propiedad flex por defecto -->
+<div class="container border border-dark">
+    <div class="row p-4 border border-warning justify-content-center">
+        <article class="col-sm-8">
+            <div class="border rounded p-4 shadow-sm text-center">
+                <h2>
+                    Servicios
+                </h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Consequatur eaque eius iure mollitia odit perspiciatis repellat repellendus, vitae.
+                    A aliquid aspernatur consequuntur deleniti dolorem earum explicabo obcaecati optio quaerat, qui.
+                </p>
+                <!-- Elemento disparador -->
+                <button type="Submit" class="btn btn-info" data-toggle="collapse" data-target="#victima"
+                        aria-expanded="false">
+                    <!-- Aria-expanded dice si por defecto debe estar visible o no -->
+                    Ver documentación
+                </button>
+
+                <div class="colapse" id="victima">
+                    <div class="my-3 p-3 rounded bg-success text-white text-left">
+                        <h3>Pasos para inscribirse</h3>
+                        <ol>
+                            <li>Iniciar sesio</li>
+                            <li>Ir panel de control</li>
+                            <li>Descargar ficha</li>
+                        </ol>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            A accusantium assumenda debitis dolorem, eaque eligendi et facere natus odio perferendis
+                            quasi quod quos temporibus ut vero voluptatem voluptatibus voluptatum. Sequi!
+                        </p>
+
+                        <p class="text-center">
+                            <button type="Submit" class="btn btn-info" data-toggle="collapse" data-target="#victima"
+                                    aria-expanded="true">
+                                Cerrar
+                            </button>
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </article>
+    </div>
+
+</div>
+
+
+<hr>
+
+<!-- Componentes -->
+<!-- Botones Outline y cambio de tamaño -->
+<section class="container">
+    <div class="row p-4">
+
+        <article class="col-sm-6">
+            <div class="border p-4 shadow">
+                <h2>Servicios</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis ea eaque explicabo id
+                    inventore mollitia perspiciatis provident quam quod, ratione repellat rerum sapiente temporibus,
+                    totam velit veniam. Sed, tempore.
+                </p>
+                <button type="button" class="btn btn-outline-danger btn-lg btn-block">Boton</button>
+            </div>
+        </article>
+
+
+        <article class="col-sm-6">
+            <div class="border p-4 shadow">
+                <h2>Servicios</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis ea eaque explicabo id
+                    inventore mollitia perspiciatis provident quam quod, ratione repellat rerum sapiente temporibus,
+                    totam
+                    velit veniam. Sed, tempore.
+                </p>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<hr>
+
+<!-- Componentes -->
+<!-- Botones -->
+<section class="container">
+    <div class="row p-4">
+
+        <article class="col-sm-6">
+            <div class="border p-4 shadow">
+                <h2>Servicios</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis ea eaque explicabo id
+                    inventore mollitia perspiciatis provident quam quod, ratione repellat rerum sapiente temporibus,
+                    totam velit veniam. Sed, tempore.
+                </p>
+                <button type="button" class="btn btn-danger">Boton</button>
+            </div>
+        </article>
+
+
+        <article class="col-sm-6">
+            <div class="border p-4 shadow">
+                <h2>Servicios</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis ea eaque explicabo id
+                    inventore mollitia perspiciatis provident quam quod, ratione repellat rerum sapiente temporibus,
+                    totam
+                    velit veniam. Sed, tempore.
+                </p>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<hr>
+
+<!-- Embed -->
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1876.4986614511033!2d-74.0132982300736!3d4.7418765853483915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f8f9c24d7de63%3A0xe5a4be0b66a18cfd!2sParque%20Ecologico%20Soratama!5e0!3m2!1ses!2sco!4v1593966952285!5m2!1ses!2sco"
+            width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
+</div>
+
+<hr>
+
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/JmZ6Z6YDsFU" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+</div>
+
+<hr>
+
+<!-- Display en contextos -->
+<p class="d-sm-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cum distinctio impedit mollitia,
+    quia reprehenderit vitae. A accusantium adipisci commodi esse, ex natus nesciunt, nihil officiis praesentium
+    repellendus similique voluptatem!</p>
+
+<!-- Display: inline-flex;  -->
+<p class="bg-dark d-inline-flex ">
+    <a href="#">Enlace 1</a>
+    <a href="#">Enlace 2</a>
+</p>
+
+<hr>
+
+<!-- Display: flex; -> contenedor flexible pero en block -->
+<p class="bg-dark d-flex ">
+    <a href="#">Enlace 1</a>
+    <a href="#">Enlace 2</a>
+</p>
+
+<hr>
+
+<!-- Display:inline-block; Lo mismo que inline, con la diferencia de que soportan width y height -->
+<p class="bg-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#">Enlace 2</a>
+    Aspernatur corporis doloribus eum neque sequi! Accusantium aperiam dolorum ipsa nobis
+    non nostrum odit quisquam reprehenderit sit voluptates? Adipisci consequuntur cumque rerum.</p>
+
+<hr>
+
+<!-- Display: inlne -> uno seguido de otro y solo ocupan el tamaño de su contenido
+    Estas propiedades NO soportan width ni height-->
+<a href="#" class="border border-dark d-inline">Enlace 1</a>
+<a href="#" class="border border-dark d-inline">Enlace 2</a>
+<hr>
+
+<!-- Display: block -> Una debajo de otra SIEMORE y siempre ocuapran TODO EL ANCHO de la caja siempre y cuando no le definamos una anchura -->
+<a href="#" class="border border-dark d-block">Enlace 1</a>
+<a href="#" class="border border-dark d-block">Enlace 2</a>
+
+<hr>
+
+<!-- Display:none -> desaparece el elemnto SOLO de la pantalla -->
+<p class="m-4 p-4 border border-dark shadow d-none">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Accusamus blanditiis consequatur consequuntur cum debitis
+    dolorum excepturi exercitationem explicabo impedit magnam
+    nemo neque officiis optio quaerat ratione, reiciendis
+    reprehenderit sed voluptatem.</p>
+
+<hr>
+
+
+<hr>
+
+<!-- Imagenes responsive -->
+<!-- img-thumbnail les agrega un borde bonito a las imagenes -->
+<!-- Para imagenes circulares, la imagen debe tener medidas exactas -->
+<section class="container">
+    <div class="row">
+        <div class="col-6 p-5">
+            <img class="img-fluid img-thumbnail" src="img/165847-1.jpg">
+        </div>
+        <div class="col-6">
+            Col 2
+        </div>
+    </div>
+</section>
+
+<hr>
+
+<!-- Sombras -->
+<p class="m-4 p-4 border border-dark shadow">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Accusamus blanditiis consequatur consequuntur cum debitis
+    dolorum excepturi exercitationem explicabo impedit magnam
+    nemo neque officiis optio quaerat ratione, reiciendis
+    reprehenderit sed voluptatem.</p>
+
+<hr>
+
+<!-- Bordes avanzados: clase 2 -->
+<!-- Bordes redondeados, solo esta unicamente este tamaño que son 0.25 REM = 5px -->
+<!-- rounded-(direccion) para aplicar bordes en una direccion concreta -->
+<!-- Bootstrap aun no dispone de grosor de bordes -->
+<p class="m-4 p-4 border border-dark rounded-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Accusamus blanditiis consequatur consequuntur cum debitis
+    dolorum excepturi exercitationem explicabo impedit magnam
+    nemo neque officiis optio quaerat ratione, reiciendis
+    reprehenderit sed voluptatem.</p>
+
+<hr>
+
+
+<!-- Clase utilidades: Bordes -->
+<!-- Con border-(direccion)-0 se elimina un borde) -->
+<!-- .border .border-(color) para acmbiar de color -->
+<p class="m-4 p-4 border border-warning border-right-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Accusamus blanditiis consequatur consequuntur cum debitis
+    dolorum excepturi exercitationem explicabo impedit magnam
+    nemo neque officiis optio quaerat ratione, reiciendis
+    reprehenderit sed voluptatem.</p>
+
+<hr>
+
+<!-- Clase flexbox 6: Flex-Fill -->
+<!-- Flex-fill hace que los elementos hijos ocupen el espacio disponible de su padre -->
+<section class="servicios2 d-flex justify-content-center ">
+    <div class="item1 flex-fill">Col 1</div>
+    <div class="item2 flex-fill">Col 2</div>
+    <div class="item3 flex-fill">Col 3</div>
+    <div class="item4 flex-fill">Col 4</div>
+    <div class="item5 flex-fill">Col 5</div>
+    <div class="item6 flex-fill">Col 6</div>
+</section>
+
+<hr>
+
+<!-- Clase flexbox 5: Alineacion individual, acpeta contextos -->
+
+<section class="servicios2 d-flex align-items-center justify-content-center">
+    <div class="item1 align-self-end">Col 1</div>
+    <div class="item2 align-self-start">Col 2</div>
+    <div class="item3 align-self-stretch">Col 3</div>
+    <div class="item4 align-self-auto">Col 4</div>
+    <div class="item5">Col 5 lorem</div>
+    <div class="item6">Col 6</div>
+</section>
+
+<hr>
+
+<!-- Clase flexbox 4, aceptan contextos -->
+<!-- align items maneja el eje Y o vertical -->
+<!-- Align items: stretch hace que lso hijos tomen la altura del padre, y es el valor por defecto -->
+<section class="servicios2 d-flex align-items-stretch">
+    <div class="item1">Col 1</div>
+    <div class="item2">Col 2</div>
+    <div class="item3">Col 3</div>
+    <div class="item4">Col 4</div>
+    <div class="item5">Col 5</div>
+    <div class="item6">Col 6</div>
+</section>
+
+<hr>
+
+<!-- Clase flexbox 3, aceptan contextos -->
+<!-- Justify content maneja el eje X u horizontal -->
+<section class="servicios d-flex justify-content-center">
+    <div class="item1">Col 1</div>
+    <div class="item2">Col 2</div>
+    <div class="item3">Col 3</div>
+    <div class="item4">Col 4</div>
+    <div class="item5">Col 5</div>
+    <div class="item6">Col 6</div>
+</section>
+
+<hr>
+
+<!-- Flexbox con orden deseado, acepta contextos -->
+<section class="servicios d-flex flex-column"><!-- En forma de columna -->
+    <div class="item1">Col 1</div>
+    <div class="item2">Col 2</div>
+    <div class="item3">Col 3</div>
+    <div class="item4">Col 4</div>
+    <div class="item5">Col 5</div>
+    <div class="item6">Col 6</div>
+</section>
+
+<hr>
+
+<!-- Clase flex container, acepta contextos -->
+<section class="servicios d-flex d-sm-block d-md-flex"><!-- Con d-sm-block quitamos la propiedad flex -->
+    <!-- Con d-md-flex recuperamos el flex -->
+    <div class="item1">Col 1</div>
+    <div class="item2">Col 2</div>
+    <div class="item3">Col 3</div>
+    <div class="item4">Col 4</div>
+    <div class="item5">Col 5</div>
+    <div class="item6">Col 6</div>
+</section>
+
+<hr>
+
+<!-- Paddings, la propiedad AUTO NO funciona en padding -> acepta contextos -->
+<div class="bg-warning">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid eligendi, ex fugiat
+    illo laboriosam neque quasi quos! Beatae eligendi est maiores nam, odio perferendis perspiciatis quidem saepe.
+    Ipsam, velit?
+</div>
+<div class="bg-danger pt-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur ducimus
+    eveniet itaque labore laborum molestiae possimus praesentium unde. A animi eius eveniet illo inventore,
+    reprehenderit sint vel voluptatum? Dolor!
+</div>
+<div class="bg-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam dolores earum illo
+    itaque minus nemo similique sunt voluptatem voluptatibus. Blanditiis distinctio, dolorum eligendi eveniet excepturi
+    exercitationem laboriosam magnam molestiae.
+</div>
+
+<hr>
+
+<!-- Margenes responsives -->
+<div class="bg-warning">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid eligendi, ex fugiat
+    illo laboriosam neque quasi quos! Beatae eligendi est maiores nam, odio perferendis perspiciatis quidem saepe.
+    Ipsam, velit?
+</div>
+<div class="bg-danger my-2 my-sm-4 my-md-0 my-lg-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+    consequatur ducimus eveniet itaque labore laborum molestiae possimus praesentium unde. A animi eius eveniet illo
+    inventore, reprehenderit sint vel voluptatum? Dolor!
+</div>
+<div class="bg-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam dolores earum illo
+    itaque minus nemo similique sunt voluptatem voluptatibus. Blanditiis distinctio, dolorum eligendi eveniet excepturi
+    exercitationem laboriosam magnam molestiae.
+</div>
+
+<hr>
+
+<!-- Clase de padding y margin usa REM por defecto, aplica contextos -->
+<!-- Recordar que REM es el tamaño predefinido por la eqtiqueta <html> donde 1REM = 16px (POR DEFECTO) -->
+<!-- AUTO: es para centrar ejemplo: mx-auto -->
+<div class="bg-warning">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid eligendi, ex fugiat
+    illo laboriosam neque quasi quos! Beatae eligendi est maiores nam, odio perferendis perspiciatis quidem saepe.
+    Ipsam, velit?
+</div>
+<div class="bg-danger mx-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consequatur ducimus
+    eveniet itaque labore laborum molestiae possimus praesentium unde. A animi eius eveniet illo inventore,
+    reprehenderit sint vel voluptatum? Dolor!
+</div>
+<div class="bg-success">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam dolores earum illo
+    itaque minus nemo similique sunt voluptatem voluptatibus. Blanditiis distinctio, dolorum eligendi eveniet excepturi
+    exercitationem laboriosam magnam molestiae.
+</div>
+
+<!-- Cambiar colores en los textos y fondos, por lo general bootstrap trae 6 colores -->
+<h1 class="text-primary">Que se dice</h1>
+<h1 class="text-white bg-dark">Blanco con background negro</h1>
+
+<!-- Transformacions de texto -->
+<h1 class="text-uppercase">Hola soy un titulo</h1><!-- Mayusculas -->
+<div class="text-lowercase">Hola soy un titulo</div><!-- Minusculas -->
+<h2 class="text-capitalize">Hola soy un titulo</h2><!-- LA primera letra de cada palabra es en mayuscula -->
+<div class="font-weight-bold">Hola soy un texto</div><!-- Negrita -->
+<div class="font-italic">Hola soy un texto</div><!-- Cursiva -->
+<h1>Texto <span class="small">Hola</span></h1><!-- Small hace que el texto se vea en un 80% de su tamaño original -->
+
+<!-- Alineacion, acepta contextos -->
+
+<p class="text-justify text-sm-right"><!-- Este alinea tanto a la derecha como a la izquierda -->
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio dolor dolorum eaque id iusto odio porro,
+    qui reiciendis repellendus repudiandae suscipit ullam unde. Architecto ex harum id iure molestiae.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto corporis dignissimos distinctio ea facilis
+    nulla officiis optio quae, quibusdam quos repellendus saepe similique suscipit tempora, totam veniam vero. Magnam,
+    ut.
+</p>
+<p class="text-left">
+    Soy un texto alineado a la izq. por defecto
+</p>
+
+<p class="text-center">
+    Soy un texto centrado
+</p>
+
+<p class="text-right">
+    Soy un texto alineado a la derecha
+</p>
+
+<!-- Titulo destacado -->
+<p class="display-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus cumque hic incidunt minima
+    molestiae, obcaecati placeat qui! Accusantium aliquid commodi cupiditate dignissimos esse hic mollitia nihil,
+    placeat temporibus veritatis? Neque.</p>
+
+<!-- Encabezados sin necesidad de usar etiquetas h1 -->
+<p class="h1">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Debitis, earum reiciendis. Architecto aut ducimus itaque nemo officiis
+    quasi ut voluptates. Dolorem, exercitationem sint? Accusamus corporis,
+    harum nemo neque vel veniam?</p>
+
+<!-- Tipografia: Maneja contextos -->
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    Aperiam architecto et voluptates. Accusamus aliquam atque culpa deleniti dolorem,
+    ea enim ipsa laborum magnam odio pariatur perferendis possimus, quis, rem unde!</p>
+
+<h1 class="text-center">Titulo</h1>
+
+<div class="container"> <!-- Contenedor normal: Este no ocupa todo el ancho de la pantalla -->
+
+    <div class="row"> <!-- Las filas tienen que ser hijos directos de un contenedor -->
+        <div class="col-3">Hola mundo</div>
+        <div class="col-5">Hola mundo</div>
+        <div class="col-4">Hola mundo</div>
+    </div>
+</div>
+
+<hr>
+
+<div class="container-fluid"> <!-- Contenedor fluido: Este SI ocupa todo el ancho de la pantalla -->
+    <div class="row">
+        <div class="col-12">Hola mundo</div>
+    </div>
+</div>
+
+<hr>
+
+<!-- Clase COL sin numero -->
+
+<!-- Este es util cuando queramos meter contenido en una fila ocuapndo todo el espacio de la fila -->
+<div class="container"> <!-- Contenedor fluido: Este SI ocupa todo el ancho de la pantalla -->
+    <div class="row">
+        <div class="col">Hola mundo</div>
+        <div class="col">Hola mundo</div>
+        <div class="col">Hola mundo</div>
+        <div class="col">Hola mundo</div>
+        <div class="col">Hola mundo</div>
+        <div class="col">Hola mundo</div>
+    </div>
+</div>
+
+<hr>
+
+<!-- COL-SM-MD-LG-*  tamaño de las columnas segun el contexto -->
+<div class="container">
+    <div class="row">
+        <div class="col-4 col-sm-1 col-md-10 col-lg-5 col-xl-1">Hola mundo</div>
+        <div class="col-4 col-sm-1 col-md-1 col-lg-5 col-xl-2">Hola mundo</div>
+        <div class="col-4 col-sm-10 col-md-1 col-lg-2 col-xl-9">Hola mundo</div>
+    </div>
+</div>
+
+<hr>
+
+<!-- Clase columnas vacias OFFSET mueve hacia la DERECHA la cantidad de columnas que quiero, maneja contextos-->
+<div class="container">
+    <div class="row">
+        <div class="col-3">Hola mundo</div>
+        <div class="col-3 offset-6 offset-md-2">Hola mundo</div>
+    </div>
+</div>
+
+<hr>
+
+<!-- Clase Columnas anidadas-->
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-4">
+            <div class="row">
+                <div class="col-2">Simbol</div>
+                <div class="col-10">Texto</div>
+            </div>
+        </div>
+
+        <div class="col-4">Hola mundo</div>
+
+        <div class="col-4">Hola mundo</div>
+    </div>
+</div>
+
+<hr>
+
+<!-- Reordenar las columnas, acepta contextos -->
+<!-- LOS CAMBIOS SON SOLO VISUALES el codigo fuente se mantiene -->
+<!-- order-* ORDENA por orden de numeros naturales, de menor a mayor, de izquierda a derecha -->
+<!-- Todas las columnas por defecto tienen un valor de 0 -->
+<div class="container">
+    <div class="row">
+        <div class="col-2 bg-danger order-5 order-md-1">Columna 1</div>
+        <div class="col-3 bg-success order-4 order-md-0">Columna 2</div>
+        <div class="col-7 bg-secondary order-3 order-md-2">Columna 3</div>
+    </div>
+</div>
+
+<hr>
+
+<!-- Horarios camila -->
+<div class="container">
+
+    <!-- Cabecera -->
+    <div class="row">
+        <div class="col">Hora</div>
+        <div class="col">Lunes</div>
+        <div class="col">Martes</div>
+        <div class="col">Miercoles</div>
+        <div class="col">Jueves</div>
+        <div class="col">Viernes</div>
+    </div>
+
+    <!-- Fila 1 materias -->
+    <div class="row">
+        <div class="col">
+            <div class="row">6:15</div>
+            <div class="row">8:19</div>
+        </div>
+
+        <div class="col">
+            Educacion fisica
+        </div>
+
+        <div class="col">
+            P. Ingles
+        </div>
+
+        <div class="col">
+            Artes
+        </div>
+
+        <div class="col">
+            Matemáticas
+        </div>
+
+        <div class="col">
+            Biología
+        </div>
+    </div>
+
+    <!-- Fila 2 materias -->
+    <div class="row">
+
+        <div class="col">
+            <div class="row">
+                8:20
+            </div>
+            <div class="row">
+                9:59
+            </div>
+        </div>
+
+        <div class="col">
+            Informatica
+        </div>
+
+        <div class="col">
+            Educacion Fisica
+        </div>
+
+        <div class="col">
+            Biologia
+        </div>
+
+        <div class="col">
+            Sociales
+        </div>
+
+        <div class="col">
+            Español
+        </div>
+    </div>
+
+    <!-- Fila 3 Materias -->
+    <div class="row">
+        <div class="col-2">
+            <div class="row">
+                10:00
+            </div>
+            <div class="row">
+                10:30
+            </div>
+        </div>
+        <div class="col">
+            Descanso
+        </div>
+    </div>
+
+    <!-- Fila 4 Materias -->
+    <div class="row">
+
+        <div class="col">
+            <div class="row">
+                10:30
+            </div>
+            <div class="row">
+                12:14
+            </div>
+        </div>
+
+        <div class="col">
+            Español
+        </div>
+
+        <div class="col">
+            <div class="row">
+                Español N.
+            </div>
+            <div class="row">
+                Geometria
+            </div>
+        </div>
+
+        <div class="col">
+            Etica y religion
+        </div>
+
+        <div class="col">
+            Formacion
+        </div>
+
+        <div class="col">
+            Matematicas
+        </div>
+
+    </div>
+
+    <!-- Fila 5 Materias -->
+    <div class="row">
+        <div class="col-2">
+            <div class="row">
+                12:15
+            </div>
+            <div class="row">
+                13:29
+            </div>
+        </div>
+        <div class="col">
+            Alumerzo
+        </div>
+    </div>
+
+    <!-- Fila 6 Materias -->
+    <div class="row">
+
+        <div class="col">
+            <div class="row">
+                13:30
+            </div>
+            <div class="row">
+                14:29
+            </div>
+        </div>
+
+        <div class="col">
+            MAtematicas
+        </div>
+
+        <div class="col">
+            Musica
+        </div>
+
+        <div class="col">
+            Ingles
+        </div>
+
+        <div class="col">
+            Ingles
+        </div>
+
+        <div class="col">
+            Sociales
+        </div>
+    </div>
+
+</div>
+
+
+<!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

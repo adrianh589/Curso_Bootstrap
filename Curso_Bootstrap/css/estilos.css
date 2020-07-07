@@ -1,0 +1,19 @@
+.servicios2 {
+  border: 2px solid green;
+  height: 150px;
+  align-items: center;
+}
+
+.servicios2 > * {
+  border: 1px solid red;
+}
+
+.servicios {
+  border: 2px solid green;
+}
+
+.servicios > * {
+  border: 1px solid red;
+}
+
+/*# sourceMappingURL=estilos.css.map */

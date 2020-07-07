@@ -1,0 +1,58 @@
+//Estilos del diseño
+
+//---------------------------------------
+//        Patron de colores
+//--------------------------------------
+
+$principal: #ff401c;
+$texto: #797c7f;
+
+//--------------------------------------------------
+//        Sobreescribiendo los estilso de bootstrap
+//--------------------------------------------------
+
+body{//Aqui editare lo que crea que es conveniente para TODA la pagina
+  color: $texto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+}
+
+.bg-primary {
+  background-color: $principal !important;
+}
+
+.text-primary{
+  color: $principal !important;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: $principal !important;
+  border-color: darken($principal, 10%) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: darken($principal, 11%) !important ;
+}
+
+.btn-primary:active{
+  background-color: darken($principal, 20%) !important ;
+  border-color: darken($principal, 10%) !important;
+}
+
+.btn-primary:focus{
+  box-shadow: 0 0 0 0.2rem rgba($principal, .5);
+}
+
+html{
+  font-size: 13px;
+}
+
+.card:hover{
+  box-shadow: 0 0 10px gray;
+}
+
+.text-primary{
+
+}
